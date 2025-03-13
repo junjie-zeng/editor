@@ -1,5 +1,6 @@
 <template>
-  <uiPage :config="page" ref="pageComp" />
+  <!-- <uiPage :config="page" ref="pageComp" /> -->
+  <Page v-if="page" :config="page" ref="pageComp"></Page>
 </template>
 
 <script lang="ts" setup>
@@ -7,8 +8,8 @@ import { nextTick, reactive, ref, watch } from "vue";
 
 import type { Id, MApp, MNode } from "@tmagic/core";
 import type { RemoveData, UpdateData } from "@tmagic/stage";
-``
-import uiPage from "./components/ui-page.vue";
+import { Page } from "../ui";
+// import uiPage from "./components/ui-page.vue";
 
 const pageComp = ref<InstanceType<typeof uiPage>>();
 const root = ref<MApp>();
